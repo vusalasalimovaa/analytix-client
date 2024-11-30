@@ -248,7 +248,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/services")
+      .get(`${import.meta.env.VITE_SERVER_URL}/api/services`)
       .then((services) => setServices(services.data))
       .catch((err) => console.log(err));
   }, []);
